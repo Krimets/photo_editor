@@ -1,4 +1,6 @@
 .idea/
 venv/
-DS_Store
+.DS_Store
 _pycache_/
+images/Modified/
+work_PIL.py
