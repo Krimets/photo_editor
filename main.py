@@ -4,13 +4,13 @@ from PyQt6.QtWidgets import QApplication, QWidget, QFileDialog, \
     QLabel, QPushButton, QListWidget, QHBoxLayout, QVBoxLayout, QMessageBox
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap
-from PIL import Image, ImageChops, ImageFont, ImageDraw, ImageFilter
+from PIL import Image
 
 from PIL.ImageFilter import BLUR, DETAIL, SMOOTH, CONTOUR, SHARPEN, EDGE_ENHANCE, EDGE_ENHANCE_MORE, EMBOSS, \
     FIND_EDGES, UnsharpMask, SMOOTH_MORE, GaussianBlur
 
 
-class ImageEditor:
+class ImageProcessor:
     def __init__(self):
         self.image = None
         self.dir = None
@@ -148,8 +148,6 @@ def show_choosen_image():
         work_image.show_image(os.path.join(work_dir, work_image.filename))
 
 
-
-
 app = QApplication([])
 win = QWidget()
 win.resize(1200, 750)
@@ -220,7 +218,7 @@ win.show()
 
 btn_dir.clicked.connect(show_filenames_list)
 
-work_image = ImageEditor()
+work_image = ImageProcessor()
 work_dir = ''
 
 lw_files.currentRowChanged.connect(show_choosen_image)
